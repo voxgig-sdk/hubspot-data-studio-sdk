@@ -1,0 +1,22 @@
+# BasicDatasourceIngestionDataPushFlow
+
+main: kit: flow: BasicDatasourceIngestionDataPushFlow:
+{
+  entity: "datasource_ingestion_data_push",
+  kind: "basic",
+  name: "BasicDatasourceIngestionDataPushFlow",
+  step: [
+    {
+      input: {
+        ref: "datasource_ingestion_data_push_ref01"
+      }
+
+      match: {
+        "2026_09_id": "2026_0901"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicDatasourceIngestionDataPushFlow"
+}

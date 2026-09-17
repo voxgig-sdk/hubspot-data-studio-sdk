@@ -1,0 +1,289 @@
+{
+  "existing": {
+    "datasource_ingestion_data_push": {
+      "DATASOURCE_INGESTION_DATA_PUSH00": {
+        "data": [],
+        "datasourceId": "s29",
+        "datasourceName": "s2a",
+        "previewLink": "s2b",
+        "2026_09_id": "2026_0901",
+        "id": "DATASOURCE_INGESTION_DATA_PUSH00"
+      },
+      "DATASOURCE_INGESTION_DATA_PUSH01": {
+        "data": [],
+        "datasourceId": "s51",
+        "datasourceName": "s52",
+        "previewLink": "s53",
+        "2026_09_id": "2026_0901",
+        "id": "DATASOURCE_INGESTION_DATA_PUSH01"
+      },
+      "DATASOURCE_INGESTION_DATA_PUSH02": {
+        "data": [],
+        "datasourceId": "s79",
+        "datasourceName": "s7a",
+        "previewLink": "s7b",
+        "2026_09_id": "2026_0901",
+        "id": "DATASOURCE_INGESTION_DATA_PUSH02"
+      }
+    }
+  },
+  "new": {
+    "datasource_ingestion_data_push": {
+      "datasource_ingestion_data_push_ref01": {
+        "data": [],
+        "datasourceId": "sa1",
+        "datasourceName": "sa2",
+        "previewLink": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /data-studio/data-source/2026-09/{datasourceId}/data-push": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "post-/data-studio/data-source/2026-09/{datasourceId}/data-push_/data-studio/data-source/2026-09-beta/{datasourceId}/data-push",
+        "parameters": [
+          {
+            "description": "Identifier of datasource",
+            "explode": false,
+            "in": "path",
+            "name": "datasourceId",
+            "required": true,
+            "schema": {
+              "example": null,
+              "format": "int64",
+              "type": "integer"
+            },
+            "style": "simple"
+          }
+        ],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": null,
+              "schema": {
+                "example": null,
+                "properties": {
+                  "data": {
+                    "description": "Data ",
+                    "example": null,
+                    "items": {
+                      "additionalProperties": {
+                        "example": null,
+                        "properties": {},
+                        "type": "object"
+                      },
+                      "example": null,
+                      "type": "object"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "data"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": null,
+                "schema": {
+                  "example": null,
+                  "properties": {
+                    "datasourceId": {
+                      "description": "Identifier of the datasource",
+                      "example": null,
+                      "type": "string"
+                    },
+                    "datasourceName": {
+                      "description": "Name of the datasource",
+                      "example": null,
+                      "type": "string"
+                    },
+                    "previewLink": {
+                      "description": "Link to preview the datasource",
+                      "example": null,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "datasourceId",
+                    "datasourceName",
+                    "previewLink"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "successful operation"
+          },
+          "default": {
+            "content": {
+              "*/*": {
+                "example": null,
+                "schema": {
+                  "description": "Represents an error response returned by the API when an operation fails. This component is used in various endpoints to provide detailed information about the error encountered.",
+                  "example": {
+                    "category": "VALIDATION_ERROR",
+                    "correlationId": "aeb5f871-7f07-4993-9211-075dc63e7cbf",
+                    "links": {
+                      "knowledge-base": "https://www.hubspot.com/products/service/knowledge-base"
+                    },
+                    "message": "Invalid input (details will vary based on the error)"
+                  },
+                  "properties": {
+                    "category": {
+                      "description": "The error category",
+                      "example": null,
+                      "type": "string"
+                    },
+                    "context": {
+                      "additionalProperties": {
+                        "example": null,
+                        "items": {
+                          "example": null,
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": "Context about the error condition",
+                      "example": "{invalidPropertyName=[propertyValue], missingScopes=[scope1, scope2]}",
+                      "type": "object"
+                    },
+                    "correlationId": {
+                      "description": "A unique identifier for the request. Include this value with any error reports or support tickets",
+                      "example": "aeb5f871-7f07-4993-9211-075dc63e7cbf",
+                      "format": "uuid",
+                      "type": "string"
+                    },
+                    "errors": {
+                      "description": "further information about the error",
+                      "example": null,
+                      "items": {
+                        "description": "Represents detailed information about an error that occurred in the API. This component is used to provide additional context and specifics about errors, typically as part of an error response.",
+                        "example": null,
+                        "properties": {
+                          "code": {
+                            "description": "The status code associated with the error detail",
+                            "example": null,
+                            "type": "string"
+                          },
+                          "context": {
+                            "additionalProperties": {
+                              "example": null,
+                              "items": {
+                                "example": null,
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            "description": "Context about the error condition",
+                            "example": "{missingScopes=[scope1, scope2]}",
+                            "type": "object"
+                          },
+                          "in": {
+                            "description": "The name of the field or parameter in which the error was found.",
+                            "example": null,
+                            "type": "string"
+                          },
+                          "message": {
+                            "description": "A human readable message describing the error along with remediation steps where appropriate",
+                            "example": null,
+                            "type": "string"
+                          },
+                          "subCategory": {
+                            "description": "A specific category that contains more specific detail about the error",
+                            "example": null,
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "message"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "links": {
+                      "additionalProperties": {
+                        "example": null,
+                        "type": "string"
+                      },
+                      "description": "A map of link names to associated URIs containing documentation about the error or recommended remediation steps",
+                      "example": null,
+                      "type": "object"
+                    },
+                    "message": {
+                      "description": "A human readable message describing the error along with remediation steps where appropriate",
+                      "example": "An error occurred",
+                      "type": "string"
+                    },
+                    "subCategory": {
+                      "description": "A specific category that contains more specific detail about the error",
+                      "example": null,
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "category",
+                    "correlationId",
+                    "message"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              "data-integration-json-datasource-write"
+            ]
+          }
+        ],
+        "securitySchemes": {
+          "developer_hapikey": {
+            "in": "query",
+            "name": "hapikey",
+            "type": "apiKey"
+          },
+          "oauth2": {
+            "flows": {
+              "authorizationCode": {
+                "authorizationUrl": "https://app.hubspot.com/oauth/authorize",
+                "scopes": {
+                  "data-integration-json-datasource-read": "",
+                  "data-integration-json-datasource-write": "",
+                  "data_integration.data_source.file.read": "",
+                  "data_integration.data_source.file.write": ""
+                },
+                "tokenUrl": "https://api.hubapi.com/oauth/v1/token"
+              }
+            },
+            "type": "oauth2"
+          },
+          "private_apps": {
+            "in": "header",
+            "name": "private-app",
+            "type": "apiKey"
+          },
+          "private_apps_legacy": {
+            "in": "header",
+            "name": "private-app-legacy",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
+      }
+    }
+  }
+}

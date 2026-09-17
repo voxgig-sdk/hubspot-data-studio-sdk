@@ -1,0 +1,91 @@
+// Typed models for the HubspotDataStudio SDK.
+//
+// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// params (op.<name>.points[].args.params[]). Field/param types come from the
+// canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+// @voxgig/apidef VALID_CANON). Do not edit by hand.
+
+export interface Advanced {
+  config: Record<string, any>
+  datasourceName?: string
+}
+
+export interface AdvancedCreateData {
+  config: Record<string, any>
+  datasourceName?: string
+}
+
+export interface Basic {
+}
+
+export interface BasicCreateData {
+}
+
+export interface BasicRemoveMatch {
+  datasource_id: number
+}
+
+export interface DatasourceIngestionDataPush {
+  data: any[]
+  datasourceId: string
+  datasourceName: string
+  previewLink: string
+}
+
+export interface DatasourceIngestionDataPushCreateData {
+  "2026_09_id": number
+  data: any[]
+  datasourceId: string
+  datasourceName: string
+  previewLink: string
+}
+
+export interface DatasourceIngestionDataSourceGet {
+  columns: any[]
+  createdAt: string
+  datasourceId: string
+  datasourceName: string
+  datasourceType: string
+  lastIngestionStatus: string
+}
+
+export interface DatasourceIngestionDataSourceGetLoadMatch {
+  datasource_id: number
+}
+
+export interface Json {
+  config?: Record<string, any>
+  createdAt?: string
+  datasourceId: string
+  datasourceName: string
+  previewLink: string
+  updatedAt?: string
+}
+
+export interface JsonUpdateData {
+  "2026_09_id": number
+  config?: Record<string, any>
+  createdAt?: string
+  datasourceId?: string
+  datasourceName?: string
+  previewLink?: string
+  updatedAt?: string
+}
+
+export interface N202609 {
+  createdAt?: string
+  datasourceId: string
+  datasourceName: string
+  previewLink: string
+  updatedAt?: string
+}
+
+export interface N202609UpdateData {
+  datasource_id: number
+  createdAt?: string
+  datasourceId?: string
+  datasourceName?: string
+  previewLink?: string
+  updatedAt?: string
+}
+
