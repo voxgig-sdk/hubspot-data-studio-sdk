@@ -54,6 +54,7 @@ class DatasourceIngestionDataPush
 /** Request payload for DatasourceIngestionDataPush#create. */
 class DatasourceIngestionDataPushCreateData
 {
+    public int $datasource_id;
     public array $data;
     public string $datasourceId;
     public string $datasourceName;
@@ -91,6 +92,7 @@ class Json
 /** Request payload for Json#update. */
 class JsonUpdateData
 {
+    public int $datasource_id;
     public ?array $config = null;
     public ?string $createdAt = null;
     public ?string $datasourceId = null;

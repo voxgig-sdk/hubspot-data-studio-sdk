@@ -425,7 +425,7 @@ Create an instance: `datasourceIngestionDataPush := client.DatasourceIngestionDa
 
 ```go
 result, err := client.DatasourceIngestionDataPush(nil).Create(map[string]any{
-    "2026_09_id": 1,
+    "datasource_id": 1,
     "data": []any{},
     "datasourceId": "example_datasourceId",
     "datasourceName": "example_datasourceName",

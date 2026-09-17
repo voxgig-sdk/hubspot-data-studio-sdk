@@ -47,9 +47,9 @@ type DatasourceIngestionDataPush struct {
 
 // DatasourceIngestionDataPushCreateData is the typed request payload for DatasourceIngestionDataPush.CreateTyped.
 type DatasourceIngestionDataPushCreateData struct {
-	F202609Id int `json:"2026_09_id"`
+	DatasourceId int `json:"datasource_id"`
 	Data []any `json:"data"`
-	DatasourceId string `json:"datasourceId"`
+	DatasourceId2 string `json:"datasourceId"`
 	DatasourceName string `json:"datasourceName"`
 	PreviewLink string `json:"previewLink"`
 }
@@ -81,10 +81,10 @@ type Json struct {
 
 // JsonUpdateData is the typed request payload for Json.UpdateTyped.
 type JsonUpdateData struct {
-	F202609Id int `json:"2026_09_id"`
+	DatasourceId int `json:"datasource_id"`
 	Config *map[string]any `json:"config,omitempty"`
 	CreatedAt *string `json:"createdAt,omitempty"`
-	DatasourceId *string `json:"datasourceId,omitempty"`
+	DatasourceId2 *string `json:"datasourceId,omitempty"`
 	DatasourceName *string `json:"datasourceName,omitempty"`
 	PreviewLink *string `json:"previewLink,omitempty"`
 	UpdatedAt *string `json:"updatedAt,omitempty"`

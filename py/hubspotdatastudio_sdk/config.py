@@ -391,7 +391,7 @@ def make_config():
                     {
                       "example": None,
                       "kind": "param",
-                      "name": "2026_09_id",
+                      "name": "datasource_id",
                       "orig": "datasource_id",
                       "reqd": True,
                       "type": "`$INTEGER`",
@@ -403,7 +403,7 @@ def make_config():
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}/data-push",
                 "rename": {
                   "param": {
-                    "datasourceId": "2026_09_id",
+                    "datasourceId": "datasource_id",
                   },
                 },
                 "segments": [
@@ -417,7 +417,7 @@ def make_config():
                     "lit": "2026-09",
                   },
                   {
-                    "var": "2026_09_id",
+                    "var": "datasource_id",
                   },
                   {
                     "lit": "data-push",
@@ -425,7 +425,7 @@ def make_config():
                 ],
                 "select": {
                   "exist": [
-                    "2026_09_id",
+                    "datasource_id",
                   ],
                 },
                 "transform": {
@@ -436,7 +436,7 @@ def make_config():
                   "data-studio",
                   "data-source",
                   "2026-09",
-                  "{2026_09_id}",
+                  "{datasource_id}",
                   "data-push",
                 ],
               },
@@ -610,7 +610,7 @@ def make_config():
                     {
                       "example": None,
                       "kind": "param",
-                      "name": "2026_09_id",
+                      "name": "datasource_id",
                       "orig": "datasource_id",
                       "reqd": True,
                       "type": "`$INTEGER`",
@@ -622,7 +622,7 @@ def make_config():
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}/json",
                 "rename": {
                   "param": {
-                    "datasourceId": "2026_09_id",
+                    "datasourceId": "datasource_id",
                   },
                 },
                 "segments": [
@@ -636,7 +636,7 @@ def make_config():
                     "lit": "2026-09",
                   },
                   {
-                    "var": "2026_09_id",
+                    "var": "datasource_id",
                   },
                   {
                     "lit": "json",
@@ -644,7 +644,7 @@ def make_config():
                 ],
                 "select": {
                   "exist": [
-                    "2026_09_id",
+                    "datasource_id",
                   ],
                 },
                 "transform": {
@@ -655,7 +655,7 @@ def make_config():
                   "data-studio",
                   "data-source",
                   "2026-09",
-                  "{2026_09_id}",
+                  "{datasource_id}",
                   "json",
                 ],
               },

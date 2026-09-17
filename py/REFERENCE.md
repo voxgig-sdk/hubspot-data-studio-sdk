@@ -229,7 +229,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.DatasourceIngestionDataPush().create({
-    "2026_09_id": 1,  # int
+    "datasource_id": 1,  # int
     "data": [],  # list
     "datasourceId": "example_datasourceId",  # str
     "datasourceName": "example_datasourceName",  # str
@@ -358,7 +358,7 @@ Update an existing entity. The data must include the entity `id`. Returns the up
 
 ```python
 result = client.Json().update({
-    "2026_09_id": 1,
+    "datasource_id": 1,
     # Fields to update
 })
 ```

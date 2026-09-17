@@ -52,6 +52,7 @@ class DatasourceIngestionDataPush(TypedDict):
 
 
 class DatasourceIngestionDataPushCreateData(TypedDict):
+    datasource_id: int
     data: list
     datasourceId: str
     datasourceName: str
@@ -83,7 +84,11 @@ class Json(JsonRequired, total=False):
     updatedAt: str
 
 
-class JsonUpdateData(TypedDict, total=False):
+class JsonUpdateDataRequired(TypedDict):
+    datasource_id: int
+
+
+class JsonUpdateData(JsonUpdateDataRequired, total=False):
     config: dict
     createdAt: str
     datasourceId: str

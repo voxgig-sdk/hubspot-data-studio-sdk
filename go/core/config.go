@@ -366,7 +366,7 @@ func MakeConfig() map[string]any {
 										map[string]any{
 											"example": nil,
 											"kind": "param",
-											"name": "2026_09_id",
+											"name": "datasource_id",
 											"orig": "datasource_id",
 											"reqd": true,
 											"type": "`$INTEGER`",
@@ -378,7 +378,7 @@ func MakeConfig() map[string]any {
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}/data-push",
 								"rename": map[string]any{
 									"param": map[string]any{
-										"datasourceId": "2026_09_id",
+										"datasourceId": "datasource_id",
 									},
 								},
 								"segments": []any{
@@ -392,7 +392,7 @@ func MakeConfig() map[string]any {
 										"lit": "2026-09",
 									},
 									map[string]any{
-										"var": "2026_09_id",
+										"var": "datasource_id",
 									},
 									map[string]any{
 										"lit": "data-push",
@@ -400,7 +400,7 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"2026_09_id",
+										"datasource_id",
 									},
 								},
 								"transform": map[string]any{
@@ -411,7 +411,7 @@ func MakeConfig() map[string]any {
 									"data-studio",
 									"data-source",
 									"2026-09",
-									"{2026_09_id}",
+									"{datasource_id}",
 									"data-push",
 								},
 							},
@@ -585,7 +585,7 @@ func MakeConfig() map[string]any {
 										map[string]any{
 											"example": nil,
 											"kind": "param",
-											"name": "2026_09_id",
+											"name": "datasource_id",
 											"orig": "datasource_id",
 											"reqd": true,
 											"type": "`$INTEGER`",
@@ -597,7 +597,7 @@ func MakeConfig() map[string]any {
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}/json",
 								"rename": map[string]any{
 									"param": map[string]any{
-										"datasourceId": "2026_09_id",
+										"datasourceId": "datasource_id",
 									},
 								},
 								"segments": []any{
@@ -611,7 +611,7 @@ func MakeConfig() map[string]any {
 										"lit": "2026-09",
 									},
 									map[string]any{
-										"var": "2026_09_id",
+										"var": "datasource_id",
 									},
 									map[string]any{
 										"lit": "json",
@@ -619,7 +619,7 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"2026_09_id",
+										"datasource_id",
 									},
 								},
 								"transform": map[string]any{
@@ -630,7 +630,7 @@ func MakeConfig() map[string]any {
 									"data-studio",
 									"data-source",
 									"2026-09",
-									"{2026_09_id}",
+									"{datasource_id}",
 									"json",
 								},
 							},

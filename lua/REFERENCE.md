@@ -234,7 +234,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:DatasourceIngestionDataPush():create({
-  ["2026_09_id"] = --[[ number ]],
+  datasource_id = --[[ number ]],
   data = --[[ table ]],
   datasourceId = --[[ string ]],
   datasourceName = --[[ string ]],
@@ -365,7 +365,7 @@ Update an existing entity. The data must include the entity `id`.
 
 ```lua
 local result, err = client:Json():update({
-  ["2026_09_id"] = 1,
+  datasource_id = 1,
   -- Fields to update
 })
 ```

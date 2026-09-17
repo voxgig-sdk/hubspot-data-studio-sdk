@@ -409,7 +409,7 @@ Create an instance: `datasource_ingestion_data_push = client.DatasourceIngestion
 
 ```python
 datasource_ingestion_data_push = client.DatasourceIngestionDataPush().create({
-    "2026_09_id": 1,  # int
+    "datasource_id": 1,  # int
     "data": [],  # list
     "datasourceId": "example_datasourceId",  # str
     "datasourceName": "example_datasourceName",  # str

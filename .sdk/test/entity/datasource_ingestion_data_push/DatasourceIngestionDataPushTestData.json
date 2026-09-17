@@ -6,7 +6,7 @@
         "datasourceId": "s29",
         "datasourceName": "s2a",
         "previewLink": "s2b",
-        "2026_09_id": "2026_0901",
+        "datasource_id": "DATASOURCE01",
         "id": "DATASOURCE_INGESTION_DATA_PUSH00"
       },
       "DATASOURCE_INGESTION_DATA_PUSH01": {
@@ -14,7 +14,7 @@
         "datasourceId": "s51",
         "datasourceName": "s52",
         "previewLink": "s53",
-        "2026_09_id": "2026_0901",
+        "datasource_id": "DATASOURCE01",
         "id": "DATASOURCE_INGESTION_DATA_PUSH01"
       },
       "DATASOURCE_INGESTION_DATA_PUSH02": {
@@ -22,7 +22,7 @@
         "datasourceId": "s79",
         "datasourceName": "s7a",
         "previewLink": "s7b",
-        "2026_09_id": "2026_0901",
+        "datasource_id": "DATASOURCE01",
         "id": "DATASOURCE_INGESTION_DATA_PUSH02"
       }
     }

@@ -53,7 +53,7 @@ func TestDatasourceIngestionDataPushEntity(t *testing.T) {
 		datasourceIngestionDataPushRef01Ent := client.DatasourceIngestionDataPush(nil)
 		datasourceIngestionDataPushRef01Data := core.ToMapAny(vs.GetProp(
 			vs.GetPath(setup.data, []any{"new", "datasource_ingestion_data_push"}), "datasource_ingestion_data_push_ref01"))
-		datasourceIngestionDataPushRef01Data["2026_09_id"] = setup.idmap["2026_0901"]
+		datasourceIngestionDataPushRef01Data["datasource_id"] = setup.idmap["datasource01"]
 
 		datasourceIngestionDataPushRef01DataResult, err := datasourceIngestionDataPushRef01Ent.Create(datasourceIngestionDataPushRef01Data, nil)
 		if err != nil {
@@ -92,7 +92,7 @@ func datasource_ingestion_data_pushBasicSetup(extra map[string]any) *entityTestS
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903"},
+		[]any{"datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903", "datasource01"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

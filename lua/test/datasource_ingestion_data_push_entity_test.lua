@@ -38,7 +38,7 @@ describe("DatasourceIngestionDataPushEntity", function()
     local datasource_ingestion_data_push_ref01_ent = client:DatasourceIngestionDataPush(nil)
     local datasource_ingestion_data_push_ref01_data = helpers.to_map(vs.getprop(
       vs.getpath(setup.data, "new.datasource_ingestion_data_push"), "datasource_ingestion_data_push_ref01"))
-    datasource_ingestion_data_push_ref01_data["2026_09_id"] = setup.idmap["2026_0901"]
+    datasource_ingestion_data_push_ref01_data["datasource_id"] = setup.idmap["datasource01"]
 
     local datasource_ingestion_data_push_ref01_data_result, err = datasource_ingestion_data_push_ref01_ent:create(datasource_ingestion_data_push_ref01_data, nil)
     assert.is_nil(err)
@@ -68,7 +68,7 @@ function datasource_ingestion_data_push_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903" },
+    { "datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903", "datasource01" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

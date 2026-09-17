@@ -41,7 +41,7 @@
 
 /**
  * @typedef {Object} DatasourceIngestionDataPushCreateData
- * @property {number} "2026_09_id"
+ * @property {number} datasource_id
  * @property {Array} data
  * @property {string} datasourceId
  * @property {string} datasourceName
@@ -75,7 +75,7 @@
 
 /**
  * @typedef {Object} JsonUpdateData
- * @property {number} "2026_09_id"
+ * @property {number} datasource_id
  * @property {Object} [config]
  * @property {string} [createdAt]
  * @property {string} [datasourceId]

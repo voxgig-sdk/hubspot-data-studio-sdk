@@ -413,7 +413,7 @@ Create an instance: `$datasource_ingestion_data_push = $client->DatasourceIngest
 
 ```php
 $datasource_ingestion_data_push = $client->DatasourceIngestionDataPush()->create([
-    "2026_09_id" => null, // int
+    "datasource_id" => null, // int
     "data" => null, // array
     "datasourceId" => null, // string
     "datasourceName" => null, // string

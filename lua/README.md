@@ -394,7 +394,7 @@ Create an instance: `local datasource_ingestion_data_push = client:DatasourceIng
 
 ```lua
 local datasource_ingestion_data_push, err = client:DatasourceIngestionDataPush():create({
-  ["2026_09_id"] = 1, -- number
+  datasource_id = 1, -- number
   data = {}, -- table
   datasourceId = "example_datasourceId", -- string
   datasourceName = "example_datasourceName", -- string

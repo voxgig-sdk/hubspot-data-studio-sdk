@@ -43,7 +43,7 @@ class TestDatasourceIngestionDataPushEntity:
         datasource_ingestion_data_push_ref01_ent = client.DatasourceIngestionDataPush(None)
         datasource_ingestion_data_push_ref01_data = helpers.to_map(vs.getprop(
             vs.getpath(setup["data"], "new.datasource_ingestion_data_push"), "datasource_ingestion_data_push_ref01"))
-        datasource_ingestion_data_push_ref01_data["2026_09_id"] = setup["idmap"]["2026_0901"]
+        datasource_ingestion_data_push_ref01_data["datasource_id"] = setup["idmap"]["datasource01"]
 
         datasource_ingestion_data_push_ref01_data = helpers.to_map(runner.entity_data(datasource_ingestion_data_push_ref01_ent.create(datasource_ingestion_data_push_ref01_data, None)))
         assert datasource_ingestion_data_push_ref01_data is not None
@@ -66,7 +66,7 @@ def _datasource_ingestion_data_push_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903"],
+        ["datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903", "datasource01"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",

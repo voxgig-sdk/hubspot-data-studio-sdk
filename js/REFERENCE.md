@@ -296,7 +296,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.DatasourceIngestionDataPush().create({
-  '2026_09_id': 1,
+  datasource_id: 1,
   data: [],
   datasourceId: 'example_datasourceId',
   datasourceName: 'example_datasourceName',
@@ -423,7 +423,7 @@ Update an existing entity. The data must include the entity `id`.
 
 ```ts
 const result = await client.Json().update({
-  '2026_09_id': 1,
+  datasource_id: 1,
   // Fields to update
 })
 ```

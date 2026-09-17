@@ -23,7 +23,7 @@ guide: {
 
   entity: datasource_ingestion_data_push: {
     path: "/data-studio/data-source/2026-09/{datasourceId}/data-push": {
-      rename: param: "datasourceId": *"2026_09_id"
+      rename: param: "datasourceId": *"datasource_id"
       op: create: method: *POST
     }
   }
@@ -37,7 +37,7 @@ guide: {
 
   entity: json: {
     path: "/data-studio/data-source/2026-09/{datasourceId}/json": {
-      rename: param: "datasourceId": *"2026_09_id"
+      rename: param: "datasourceId": *"datasource_id"
       op: update: method: *PUT
     }
   }

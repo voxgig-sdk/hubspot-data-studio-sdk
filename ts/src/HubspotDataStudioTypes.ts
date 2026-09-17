@@ -33,7 +33,7 @@ export interface DatasourceIngestionDataPush {
 }
 
 export interface DatasourceIngestionDataPushCreateData {
-  "2026_09_id": number
+  datasource_id: number
   data: any[]
   datasourceId: string
   datasourceName: string
@@ -63,7 +63,7 @@ export interface Json {
 }
 
 export interface JsonUpdateData {
-  "2026_09_id": number
+  datasource_id: number
   config?: Record<string, any>
   createdAt?: string
   datasourceId?: string

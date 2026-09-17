@@ -12,7 +12,7 @@ main: kit: flow: BasicDatasourceIngestionDataPushFlow:
       }
 
       match: {
-        "2026_09_id": "2026_0901"
+        datasource_id: "datasource01"
       }
 
       op: "create"

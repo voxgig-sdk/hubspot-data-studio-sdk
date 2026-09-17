@@ -42,7 +42,7 @@ class DatasourceIngestionDataPushEntityTest extends TestCase
         $datasource_ingestion_data_push_ref01_ent = $client->DatasourceIngestionDataPush(null);
         $datasource_ingestion_data_push_ref01_data = Helpers::to_map(Vs::getprop(
             Vs::getpath($setup["data"], "new.datasource_ingestion_data_push"), "datasource_ingestion_data_push_ref01"));
-        $datasource_ingestion_data_push_ref01_data["2026_09_id"] = $setup["idmap"]["2026_0901"];
+        $datasource_ingestion_data_push_ref01_data["datasource_id"] = $setup["idmap"]["datasource01"];
 
         $datasource_ingestion_data_push_ref01_data_result = $datasource_ingestion_data_push_ref01_ent->create($datasource_ingestion_data_push_ref01_data, null);
         $datasource_ingestion_data_push_ref01_data = Helpers::to_map(is_object($datasource_ingestion_data_push_ref01_data_result) && method_exists($datasource_ingestion_data_push_ref01_data_result, 'data_get') ? $datasource_ingestion_data_push_ref01_data_result->data_get() : $datasource_ingestion_data_push_ref01_data_result);
@@ -66,7 +66,7 @@ function datasource_ingestion_data_push_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903"] as $k) {
+    foreach (["datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903", "datasource01"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

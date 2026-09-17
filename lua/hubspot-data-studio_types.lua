@@ -28,7 +28,7 @@
 ---@field previewLink string
 
 ---@class DatasourceIngestionDataPushCreateData
----@field ["2026_09_id"] number
+---@field datasource_id number
 ---@field data table
 ---@field datasourceId string
 ---@field datasourceName string
@@ -54,7 +54,7 @@
 ---@field updatedAt? string
 
 ---@class JsonUpdateData
----@field ["2026_09_id"] number
+---@field datasource_id number
 ---@field config? table
 ---@field createdAt? string
 ---@field datasourceId? string

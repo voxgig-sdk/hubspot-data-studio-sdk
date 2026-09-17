@@ -449,7 +449,7 @@ Create an instance: `const datasource_ingestion_data_push = client.DatasourceIng
 
 ```ts
 const datasource_ingestion_data_push = await client.DatasourceIngestionDataPush().create({
-  '2026_09_id': 1,
+  datasource_id: 1,
   data: [],
   datasourceId: 'example_datasourceId',
   datasourceName: 'example_datasourceName',

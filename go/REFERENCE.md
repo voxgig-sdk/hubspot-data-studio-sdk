@@ -244,7 +244,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.DatasourceIngestionDataPush(nil).Create(map[string]any{
-    "2026_09_id": 1,
+    "datasource_id": 1,
     "data": []any{},
     "datasourceId": "example_datasourceId",
     "datasourceName": "example_datasourceName",
@@ -373,7 +373,7 @@ Update an existing entity. The data must include the entity `id`.
 
 ```go
 result, err := client.Json(nil).Update(map[string]any{
-    "2026_09_id": 1,
+    "datasource_id": 1,
     // Fields to update
 }, nil)
 if err != nil {

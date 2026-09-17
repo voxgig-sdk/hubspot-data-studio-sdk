@@ -236,7 +236,7 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->DatasourceIngestionDataPush()->create([
-  "2026_09_id" => null, // int
+  "datasource_id" => null, // int
   "data" => null, // array
   "datasourceId" => null, // string
   "datasourceName" => null, // string
@@ -367,7 +367,7 @@ Update an existing entity. The data must include the entity `id`. Throws on erro
 
 ```php
 $result = $client->Json()->update([
-  "2026_09_id" => 1,
+  "datasource_id" => 1,
   // Fields to update
 ]);
 ```
