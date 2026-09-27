@@ -1,0 +1,8 @@
+# Flows
+
+@"./BasicAdvancedFlow.aontu"
+@"./BasicBasicFlow.aontu"
+@"./BasicDatasourceIngestionDataPushFlow.aontu"
+@"./BasicDatasourceIngestionDataSourceGetFlow.aontu"
+@"./BasicJsonFlow.aontu"
+@"./BasicN202609Flow.aontu"

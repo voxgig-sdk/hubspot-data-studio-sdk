@@ -171,13 +171,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "config",
-						"req": true,
+						"title": "Config",
 						"type": "`$OBJECT`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "datasourceName",
-						"short": "Name of datasource",
+						"title": "Datasource Name",
 						"type": "`$STRING`",
+						"short": "Name of datasource",
 					},
 				},
 				"name": "advanced",
@@ -187,7 +189,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/data-studio/data-source/2026-09/json",
@@ -205,17 +206,19 @@ func MakeConfig() map[string]any {
 										"lit": "json",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"data-studio",
 									"data-source",
 									"2026-09",
 									"json",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -233,7 +236,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/data-studio/data-source/2026-09",
@@ -248,16 +250,18 @@ func MakeConfig() map[string]any {
 										"lit": "2026-09",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"data-studio",
 									"data-source",
 									"2026-09",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -266,26 +270,9 @@ func MakeConfig() map[string]any {
 						"name": "remove",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": nil,
-											"kind": "param",
-											"name": "datasource_id",
-											"orig": "datasource_id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "DELETE",
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"datasourceId": "datasource_id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "data-studio",
@@ -300,58 +287,75 @@ func MakeConfig() map[string]any {
 										"var": "datasource_id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"datasource_id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"data-studio",
 									"data-source",
 									"2026-09",
 									"{datasource_id}",
 								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"datasourceId": "datasource_id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "datasource_id",
+											"orig": "datasource_id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": nil,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"datasource_id",
+									},
+								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"2026_09",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"datasource_ingestion_data_push": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"title": "Data",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "Data",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "datasourceId",
+						"title": "Datasource Id",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Identifier of the datasource",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "datasourceName",
+						"title": "Datasource Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Name of the datasource",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "previewLink",
+						"title": "Preview Link",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Link to preview the datasource",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "datasource_ingestion_data_push",
@@ -361,26 +365,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": nil,
-											"kind": "param",
-											"name": "datasource_id",
-											"orig": "datasource_id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}/data-push",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"datasourceId": "datasource_id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "data-studio",
@@ -398,15 +385,6 @@ func MakeConfig() map[string]any {
 										"lit": "data-push",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"datasource_id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"data-studio",
 									"data-source",
@@ -414,55 +392,83 @@ func MakeConfig() map[string]any {
 									"{datasource_id}",
 									"data-push",
 								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"datasourceId": "datasource_id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "datasource_id",
+											"orig": "datasource_id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": nil,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"datasource_id",
+									},
+								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"2026_09",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"datasource_ingestion_data_source_get": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "columns",
+						"title": "Columns",
+						"type": "`$ARRAY`",
 						"req": true,
 						"short": "An array of FileColumn objects representing the columns in the data source.",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "createdAt",
+						"title": "Created At",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The creation date and time of the data source, represented as a string.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "datasourceId",
+						"title": "Datasource Id",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The unique identifier for the data source, represented as a 64-bit integer.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "datasourceName",
+						"title": "Datasource Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The name of the data source, represented as a string.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "datasourceType",
+						"title": "Datasource Type",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The type of the data source, which is a string with a valid value of 'FILE'.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "lastIngestionStatus",
+						"title": "Last Ingestion Status",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The status of the last data ingestion process, represented as a string.",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "datasource_ingestion_data_source_get",
@@ -472,26 +478,9 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": nil,
-											"kind": "param",
-											"name": "datasource_id",
-											"orig": "datasource_id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"datasourceId": "datasource_id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "data-studio",
@@ -506,71 +495,90 @@ func MakeConfig() map[string]any {
 										"var": "datasource_id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"datasource_id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"data-studio",
 									"data-source",
 									"2026-09",
 									"{datasource_id}",
 								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"datasourceId": "datasource_id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "datasource_id",
+											"orig": "datasource_id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": nil,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"datasource_id",
+									},
+								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"2026_09",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"json": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "config",
+						"title": "Config",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "createdAt",
-						"short": "Timestamp when the datasource was created.",
+						"title": "Created At",
 						"type": "`$STRING`",
+						"short": "Timestamp when the datasource was created.",
 					},
 					map[string]any{
 						"name": "datasourceId",
+						"title": "Datasource Id",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The unique identifier for the data source.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "datasourceName",
+						"title": "Datasource Name",
+						"type": "`$STRING`",
+						"req": true,
 						"op": map[string]any{
 							"update": map[string]any{
 								"type": "`$STRING`",
 							},
 						},
-						"req": true,
 						"short": "The name of the data source.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "previewLink",
+						"title": "Preview Link",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "A URL string that provides a preview link for the data source.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "updatedAt",
-						"short": "Timestamp when the datasource was updated.",
+						"title": "Updated At",
 						"type": "`$STRING`",
+						"short": "Timestamp when the datasource was updated.",
 					},
 				},
 				"name": "json",
@@ -580,26 +588,9 @@ func MakeConfig() map[string]any {
 						"name": "update",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": nil,
-											"kind": "param",
-											"name": "datasource_id",
-											"orig": "datasource_id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "PUT",
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}/json",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"datasourceId": "datasource_id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "data-studio",
@@ -617,15 +608,6 @@ func MakeConfig() map[string]any {
 										"lit": "json",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"datasource_id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"data-studio",
 									"data-source",
@@ -633,47 +615,74 @@ func MakeConfig() map[string]any {
 									"{datasource_id}",
 									"json",
 								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"datasourceId": "datasource_id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "datasource_id",
+											"orig": "datasource_id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": nil,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"datasource_id",
+									},
+								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"2026_09",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"n2026_09": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "createdAt",
-						"short": "Timestamp when the datasource was created.",
+						"title": "Created At",
 						"type": "`$STRING`",
+						"short": "Timestamp when the datasource was created.",
 					},
 					map[string]any{
 						"name": "datasourceId",
+						"title": "Datasource Id",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The unique identifier for the data source.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "datasourceName",
+						"title": "Datasource Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The name of the data source.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "previewLink",
+						"title": "Preview Link",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "A URL string that provides a preview link for the data source.",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "updatedAt",
-						"short": "Timestamp when the datasource was updated.",
+						"title": "Updated At",
 						"type": "`$STRING`",
+						"short": "Timestamp when the datasource was updated.",
 					},
 				},
 				"name": "n2026_09",
@@ -683,26 +692,9 @@ func MakeConfig() map[string]any {
 						"name": "patch",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": nil,
-											"kind": "param",
-											"name": "datasource_id",
-											"orig": "datasource_id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "PATCH",
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"datasourceId": "datasource_id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "data-studio",
@@ -717,20 +709,37 @@ func MakeConfig() map[string]any {
 										"var": "datasource_id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"datasource_id",
+								"parts": []any{
+									"data-studio",
+									"data-source",
+									"2026-09",
+									"{datasource_id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"datasourceId": "datasource_id",
 									},
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"data-studio",
-									"data-source",
-									"2026-09",
-									"{datasource_id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "datasource_id",
+											"orig": "datasource_id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": nil,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"datasource_id",
+									},
 								},
 							},
 						},
@@ -740,26 +749,9 @@ func MakeConfig() map[string]any {
 						"name": "update",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": nil,
-											"kind": "param",
-											"name": "datasource_id",
-											"orig": "datasource_id",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "PUT",
 								"orig": "/data-studio/data-source/2026-09/{datasourceId}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"datasourceId": "datasource_id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "data-studio",
@@ -774,31 +766,44 @@ func MakeConfig() map[string]any {
 										"var": "datasource_id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"datasource_id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"data-studio",
 									"data-source",
 									"2026-09",
 									"{datasource_id}",
 								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"datasourceId": "datasource_id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "datasource_id",
+											"orig": "datasource_id",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+											"example": nil,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"datasource_id",
+									},
+								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"2026_09",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 		},

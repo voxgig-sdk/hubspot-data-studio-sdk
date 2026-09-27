@@ -109,7 +109,7 @@ func jsonBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"json01", "json02", "json03", "2026_0901", "2026_0902", "2026_0903"},
+		[]any{"json01", "json02", "json03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

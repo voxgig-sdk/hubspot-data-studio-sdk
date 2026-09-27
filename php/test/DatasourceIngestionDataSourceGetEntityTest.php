@@ -70,7 +70,7 @@ function datasource_ingestion_data_source_get_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["datasource_ingestion_data_source_get01", "datasource_ingestion_data_source_get02", "datasource_ingestion_data_source_get03", "2026_0901", "2026_0902", "2026_0903"] as $k) {
+    foreach (["datasource_ingestion_data_source_get01", "datasource_ingestion_data_source_get02", "datasource_ingestion_data_source_get03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

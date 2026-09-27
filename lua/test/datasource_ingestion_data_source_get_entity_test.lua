@@ -72,7 +72,7 @@ function datasource_ingestion_data_source_get_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "datasource_ingestion_data_source_get01", "datasource_ingestion_data_source_get02", "datasource_ingestion_data_source_get03", "2026_0901", "2026_0902", "2026_0903" },
+    { "datasource_ingestion_data_source_get01", "datasource_ingestion_data_source_get02", "datasource_ingestion_data_source_get03" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

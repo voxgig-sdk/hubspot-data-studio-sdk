@@ -1,0 +1,120 @@
+# Entity: json
+
+main: kit: entity: json: {
+
+  alias: field: {}
+
+  fields: {
+    config: {
+      h: "Config"
+      n: "config"
+      r: false
+      t: "`$OBJECT`"
+    }
+    createdAt: {
+      h: "Created At"
+      n: "createdAt"
+      r: false
+      sh: "Timestamp when the datasource was created."
+      t: "`$STRING`"
+    }
+    datasourceId: {
+      h: "Datasource Id"
+      n: "datasourceId"
+      r: true
+      sh: "The unique identifier for the data source."
+      t: "`$STRING`"
+    }
+    datasourceName: {
+      h: "Datasource Name"
+      n: "datasourceName"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "The name of the data source."
+      t: "`$STRING`"
+    }
+    previewLink: {
+      h: "Preview Link"
+      n: "previewLink"
+      r: true
+      sh: "A URL string that provides a preview link for the data source."
+      t: "`$STRING`"
+    }
+    updatedAt: {
+      h: "Updated At"
+      n: "updatedAt"
+      r: false
+      sh: "Timestamp when the datasource was updated."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "json"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /data-studio/data-source/2026-09/{datasourceId}/json"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: null
+                k: "param"
+                n: "datasource_id"
+                or: "datasource_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/data-studio/data-source/2026-09/{datasourceId}/json"
+          q: {
+            exist: [
+              "datasource_id"
+            ]
+          }
+          r: {
+            param: {
+              datasourceId: "datasource_id"
+            }
+          }
+          s: [
+            {
+              lit: "data-studio"
+            }
+            {
+              lit: "data-source"
+            }
+            {
+              lit: "2026-09"
+            }
+            {
+              var: "datasource_id"
+            }
+            {
+              lit: "json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

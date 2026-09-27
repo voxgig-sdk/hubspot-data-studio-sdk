@@ -1,7 +1,7 @@
 // Typed models for the HubspotDataStudio SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,8 +14,6 @@ import (
 
 // Advanced is the typed data model for the advanced entity.
 type Advanced struct {
-	Config map[string]any `json:"config"`
-	DatasourceName *string `json:"datasourceName,omitempty"`
 }
 
 // AdvancedCreateData is the typed request payload for Advanced.CreateTyped.
@@ -39,10 +37,6 @@ type BasicRemoveMatch struct {
 
 // DatasourceIngestionDataPush is the typed data model for the datasource_ingestion_data_push entity.
 type DatasourceIngestionDataPush struct {
-	Data []any `json:"data"`
-	DatasourceId string `json:"datasourceId"`
-	DatasourceName string `json:"datasourceName"`
-	PreviewLink string `json:"previewLink"`
 }
 
 // DatasourceIngestionDataPushCreateData is the typed request payload for DatasourceIngestionDataPush.CreateTyped.
@@ -56,12 +50,6 @@ type DatasourceIngestionDataPushCreateData struct {
 
 // DatasourceIngestionDataSourceGet is the typed data model for the datasource_ingestion_data_source_get entity.
 type DatasourceIngestionDataSourceGet struct {
-	Columns []any `json:"columns"`
-	CreatedAt string `json:"createdAt"`
-	DatasourceId string `json:"datasourceId"`
-	DatasourceName string `json:"datasourceName"`
-	DatasourceType string `json:"datasourceType"`
-	LastIngestionStatus string `json:"lastIngestionStatus"`
 }
 
 // DatasourceIngestionDataSourceGetLoadMatch is the typed request payload for DatasourceIngestionDataSourceGet.LoadTyped.
@@ -71,12 +59,6 @@ type DatasourceIngestionDataSourceGetLoadMatch struct {
 
 // Json is the typed data model for the json entity.
 type Json struct {
-	Config *map[string]any `json:"config,omitempty"`
-	CreatedAt *string `json:"createdAt,omitempty"`
-	DatasourceId string `json:"datasourceId"`
-	DatasourceName string `json:"datasourceName"`
-	PreviewLink string `json:"previewLink"`
-	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
 // JsonUpdateData is the typed request payload for Json.UpdateTyped.
@@ -92,11 +74,6 @@ type JsonUpdateData struct {
 
 // N202609 is the typed data model for the n2026_09 entity.
 type N202609 struct {
-	CreatedAt *string `json:"createdAt,omitempty"`
-	DatasourceId string `json:"datasourceId"`
-	DatasourceName string `json:"datasourceName"`
-	PreviewLink string `json:"previewLink"`
-	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
 // N202609UpdateData is the typed request payload for N202609.UpdateTyped.

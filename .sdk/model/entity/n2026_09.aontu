@@ -1,0 +1,159 @@
+# Entity: n2026_09
+
+main: kit: entity: n2026_09: {
+
+  alias: field: {}
+
+  fields: {
+    createdAt: {
+      h: "Created At"
+      n: "createdAt"
+      r: false
+      sh: "Timestamp when the datasource was created."
+      t: "`$STRING`"
+    }
+    datasourceId: {
+      h: "Datasource Id"
+      n: "datasourceId"
+      r: true
+      sh: "The unique identifier for the data source."
+      t: "`$STRING`"
+    }
+    datasourceName: {
+      h: "Datasource Name"
+      n: "datasourceName"
+      r: true
+      sh: "The name of the data source."
+      t: "`$STRING`"
+    }
+    previewLink: {
+      h: "Preview Link"
+      n: "previewLink"
+      r: true
+      sh: "A URL string that provides a preview link for the data source."
+      t: "`$STRING`"
+    }
+    updatedAt: {
+      h: "Updated At"
+      n: "updatedAt"
+      r: false
+      sh: "Timestamp when the datasource was updated."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "n2026_09"
+  op: {
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /data-studio/data-source/2026-09/{datasourceId}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: null
+                k: "param"
+                n: "datasource_id"
+                or: "datasource_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/data-studio/data-source/2026-09/{datasourceId}"
+          q: {
+            exist: [
+              "datasource_id"
+            ]
+          }
+          r: {
+            param: {
+              datasourceId: "datasource_id"
+            }
+          }
+          s: [
+            {
+              lit: "data-studio"
+            }
+            {
+              lit: "data-source"
+            }
+            {
+              lit: "2026-09"
+            }
+            {
+              var: "datasource_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /data-studio/data-source/2026-09/{datasourceId}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: null
+                k: "param"
+                n: "datasource_id"
+                or: "datasource_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/data-studio/data-source/2026-09/{datasourceId}"
+          q: {
+            exist: [
+              "datasource_id"
+            ]
+          }
+          r: {
+            param: {
+              datasourceId: "datasource_id"
+            }
+          }
+          s: [
+            {
+              lit: "data-studio"
+            }
+            {
+              lit: "data-source"
+            }
+            {
+              lit: "2026-09"
+            }
+            {
+              var: "datasource_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

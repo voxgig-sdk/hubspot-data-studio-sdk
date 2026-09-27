@@ -196,13 +196,15 @@ def make_config():
         "fields": [
           {
             "name": "config",
-            "req": True,
+            "title": "Config",
             "type": "`$OBJECT`",
+            "req": True,
           },
           {
             "name": "datasourceName",
-            "short": "Name of datasource",
+            "title": "Datasource Name",
             "type": "`$STRING`",
+            "short": "Name of datasource",
           },
         ],
         "name": "advanced",
@@ -212,7 +214,6 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/data-studio/data-source/2026-09/json",
@@ -230,17 +231,19 @@ def make_config():
                     "lit": "json",
                   },
                 ],
-                "select": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
                   "2026-09",
                   "json",
                 ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {},
+                "select": {},
               },
             ],
           },
@@ -258,7 +261,6 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/data-studio/data-source/2026-09",
@@ -273,16 +275,18 @@ def make_config():
                     "lit": "2026-09",
                   },
                 ],
-                "select": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
                   "2026-09",
                 ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {},
+                "select": {},
               },
             ],
           },
@@ -291,26 +295,9 @@ def make_config():
             "name": "remove",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": None,
-                      "kind": "param",
-                      "name": "datasource_id",
-                      "orig": "datasource_id",
-                      "reqd": True,
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "DELETE",
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}",
-                "rename": {
-                  "param": {
-                    "datasourceId": "datasource_id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "data-studio",
@@ -325,58 +312,75 @@ def make_config():
                     "var": "datasource_id",
                   },
                 ],
-                "select": {
-                  "exist": [
-                    "datasource_id",
-                  ],
-                },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
                   "2026-09",
                   "{datasource_id}",
                 ],
+                "rename": {
+                  "param": {
+                    "datasourceId": "datasource_id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "datasource_id",
+                      "orig": "datasource_id",
+                      "type": "`$INTEGER`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": None,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "datasource_id",
+                  ],
+                },
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "2026_09",
-            ],
-          ],
+          "ancestors": [],
         },
       },
       "datasource_ingestion_data_push": {
         "fields": [
           {
             "name": "data",
+            "title": "Data",
+            "type": "`$ARRAY`",
             "req": True,
             "short": "Data",
-            "type": "`$ARRAY`",
           },
           {
             "name": "datasourceId",
+            "title": "Datasource Id",
+            "type": "`$STRING`",
             "req": True,
             "short": "Identifier of the datasource",
-            "type": "`$STRING`",
           },
           {
             "name": "datasourceName",
+            "title": "Datasource Name",
+            "type": "`$STRING`",
             "req": True,
             "short": "Name of the datasource",
-            "type": "`$STRING`",
           },
           {
             "name": "previewLink",
+            "title": "Preview Link",
+            "type": "`$STRING`",
             "req": True,
             "short": "Link to preview the datasource",
-            "type": "`$STRING`",
           },
         ],
         "name": "datasource_ingestion_data_push",
@@ -386,26 +390,9 @@ def make_config():
             "name": "create",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": None,
-                      "kind": "param",
-                      "name": "datasource_id",
-                      "orig": "datasource_id",
-                      "reqd": True,
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "POST",
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}/data-push",
-                "rename": {
-                  "param": {
-                    "datasourceId": "datasource_id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "data-studio",
@@ -423,15 +410,6 @@ def make_config():
                     "lit": "data-push",
                   },
                 ],
-                "select": {
-                  "exist": [
-                    "datasource_id",
-                  ],
-                },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
@@ -439,55 +417,83 @@ def make_config():
                   "{datasource_id}",
                   "data-push",
                 ],
+                "rename": {
+                  "param": {
+                    "datasourceId": "datasource_id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "datasource_id",
+                      "orig": "datasource_id",
+                      "type": "`$INTEGER`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": None,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "datasource_id",
+                  ],
+                },
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "2026_09",
-            ],
-          ],
+          "ancestors": [],
         },
       },
       "datasource_ingestion_data_source_get": {
         "fields": [
           {
             "name": "columns",
+            "title": "Columns",
+            "type": "`$ARRAY`",
             "req": True,
             "short": "An array of FileColumn objects representing the columns in the data source.",
-            "type": "`$ARRAY`",
           },
           {
             "name": "createdAt",
+            "title": "Created At",
+            "type": "`$STRING`",
             "req": True,
             "short": "The creation date and time of the data source, represented as a string.",
-            "type": "`$STRING`",
           },
           {
             "name": "datasourceId",
+            "title": "Datasource Id",
+            "type": "`$STRING`",
             "req": True,
             "short": "The unique identifier for the data source, represented as a 64-bit integer.",
-            "type": "`$STRING`",
           },
           {
             "name": "datasourceName",
+            "title": "Datasource Name",
+            "type": "`$STRING`",
             "req": True,
             "short": "The name of the data source, represented as a string.",
-            "type": "`$STRING`",
           },
           {
             "name": "datasourceType",
+            "title": "Datasource Type",
+            "type": "`$STRING`",
             "req": True,
             "short": "The type of the data source, which is a string with a valid value of 'FILE'.",
-            "type": "`$STRING`",
           },
           {
             "name": "lastIngestionStatus",
+            "title": "Last Ingestion Status",
+            "type": "`$STRING`",
             "req": True,
             "short": "The status of the last data ingestion process, represented as a string.",
-            "type": "`$STRING`",
           },
         ],
         "name": "datasource_ingestion_data_source_get",
@@ -497,26 +503,9 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": None,
-                      "kind": "param",
-                      "name": "datasource_id",
-                      "orig": "datasource_id",
-                      "reqd": True,
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}",
-                "rename": {
-                  "param": {
-                    "datasourceId": "datasource_id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "data-studio",
@@ -531,71 +520,90 @@ def make_config():
                     "var": "datasource_id",
                   },
                 ],
-                "select": {
-                  "exist": [
-                    "datasource_id",
-                  ],
-                },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
                   "2026-09",
                   "{datasource_id}",
                 ],
+                "rename": {
+                  "param": {
+                    "datasourceId": "datasource_id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "datasource_id",
+                      "orig": "datasource_id",
+                      "type": "`$INTEGER`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": None,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "datasource_id",
+                  ],
+                },
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "2026_09",
-            ],
-          ],
+          "ancestors": [],
         },
       },
       "json": {
         "fields": [
           {
             "name": "config",
+            "title": "Config",
             "type": "`$OBJECT`",
           },
           {
             "name": "createdAt",
-            "short": "Timestamp when the datasource was created.",
+            "title": "Created At",
             "type": "`$STRING`",
+            "short": "Timestamp when the datasource was created.",
           },
           {
             "name": "datasourceId",
+            "title": "Datasource Id",
+            "type": "`$STRING`",
             "req": True,
             "short": "The unique identifier for the data source.",
-            "type": "`$STRING`",
           },
           {
             "name": "datasourceName",
+            "title": "Datasource Name",
+            "type": "`$STRING`",
+            "req": True,
             "op": {
               "update": {
                 "type": "`$STRING`",
               },
             },
-            "req": True,
             "short": "The name of the data source.",
-            "type": "`$STRING`",
           },
           {
             "name": "previewLink",
+            "title": "Preview Link",
+            "type": "`$STRING`",
             "req": True,
             "short": "A URL string that provides a preview link for the data source.",
-            "type": "`$STRING`",
           },
           {
             "name": "updatedAt",
-            "short": "Timestamp when the datasource was updated.",
+            "title": "Updated At",
             "type": "`$STRING`",
+            "short": "Timestamp when the datasource was updated.",
           },
         ],
         "name": "json",
@@ -605,26 +613,9 @@ def make_config():
             "name": "update",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": None,
-                      "kind": "param",
-                      "name": "datasource_id",
-                      "orig": "datasource_id",
-                      "reqd": True,
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "PUT",
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}/json",
-                "rename": {
-                  "param": {
-                    "datasourceId": "datasource_id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "data-studio",
@@ -642,15 +633,6 @@ def make_config():
                     "lit": "json",
                   },
                 ],
-                "select": {
-                  "exist": [
-                    "datasource_id",
-                  ],
-                },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
@@ -658,47 +640,74 @@ def make_config():
                   "{datasource_id}",
                   "json",
                 ],
+                "rename": {
+                  "param": {
+                    "datasourceId": "datasource_id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "datasource_id",
+                      "orig": "datasource_id",
+                      "type": "`$INTEGER`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": None,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "datasource_id",
+                  ],
+                },
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "2026_09",
-            ],
-          ],
+          "ancestors": [],
         },
       },
       "n2026_09": {
         "fields": [
           {
             "name": "createdAt",
-            "short": "Timestamp when the datasource was created.",
+            "title": "Created At",
             "type": "`$STRING`",
+            "short": "Timestamp when the datasource was created.",
           },
           {
             "name": "datasourceId",
+            "title": "Datasource Id",
+            "type": "`$STRING`",
             "req": True,
             "short": "The unique identifier for the data source.",
-            "type": "`$STRING`",
           },
           {
             "name": "datasourceName",
+            "title": "Datasource Name",
+            "type": "`$STRING`",
             "req": True,
             "short": "The name of the data source.",
-            "type": "`$STRING`",
           },
           {
             "name": "previewLink",
+            "title": "Preview Link",
+            "type": "`$STRING`",
             "req": True,
             "short": "A URL string that provides a preview link for the data source.",
-            "type": "`$STRING`",
           },
           {
             "name": "updatedAt",
-            "short": "Timestamp when the datasource was updated.",
+            "title": "Updated At",
             "type": "`$STRING`",
+            "short": "Timestamp when the datasource was updated.",
           },
         ],
         "name": "n2026_09",
@@ -708,26 +717,9 @@ def make_config():
             "name": "patch",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": None,
-                      "kind": "param",
-                      "name": "datasource_id",
-                      "orig": "datasource_id",
-                      "reqd": True,
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "PATCH",
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}",
-                "rename": {
-                  "param": {
-                    "datasourceId": "datasource_id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "data-studio",
@@ -742,21 +734,38 @@ def make_config():
                     "var": "datasource_id",
                   },
                 ],
-                "select": {
-                  "exist": [
-                    "datasource_id",
-                  ],
-                },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
                   "2026-09",
                   "{datasource_id}",
                 ],
+                "rename": {
+                  "param": {
+                    "datasourceId": "datasource_id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "datasource_id",
+                      "orig": "datasource_id",
+                      "type": "`$INTEGER`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": None,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "datasource_id",
+                  ],
+                },
               },
             ],
           },
@@ -765,26 +774,9 @@ def make_config():
             "name": "update",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": None,
-                      "kind": "param",
-                      "name": "datasource_id",
-                      "orig": "datasource_id",
-                      "reqd": True,
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "PUT",
                 "orig": "/data-studio/data-source/2026-09/{datasourceId}",
-                "rename": {
-                  "param": {
-                    "datasourceId": "datasource_id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "data-studio",
@@ -799,31 +791,44 @@ def make_config():
                     "var": "datasource_id",
                   },
                 ],
-                "select": {
-                  "exist": [
-                    "datasource_id",
-                  ],
-                },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
                 "parts": [
                   "data-studio",
                   "data-source",
                   "2026-09",
                   "{datasource_id}",
                 ],
+                "rename": {
+                  "param": {
+                    "datasourceId": "datasource_id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "datasource_id",
+                      "orig": "datasource_id",
+                      "type": "`$INTEGER`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": None,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "datasource_id",
+                  ],
+                },
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "2026_09",
-            ],
-          ],
+          "ancestors": [],
         },
       },
     },

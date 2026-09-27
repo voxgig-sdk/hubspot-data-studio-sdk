@@ -1,0 +1,61 @@
+# Entity: advanced
+
+main: kit: entity: advanced: {
+
+  alias: field: {}
+
+  fields: {
+    config: {
+      h: "Config"
+      n: "config"
+      r: true
+      t: "`$OBJECT`"
+    }
+    datasourceName: {
+      h: "Datasource Name"
+      n: "datasourceName"
+      r: false
+      sh: "Name of datasource"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "advanced"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /data-studio/data-source/2026-09/json"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/data-studio/data-source/2026-09/json"
+          s: [
+            {
+              lit: "data-studio"
+            }
+            {
+              lit: "data-source"
+            }
+            {
+              lit: "2026-09"
+            }
+            {
+              lit: "json"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

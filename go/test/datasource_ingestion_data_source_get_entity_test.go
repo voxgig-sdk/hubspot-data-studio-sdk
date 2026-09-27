@@ -98,7 +98,7 @@ func datasource_ingestion_data_source_getBasicSetup(extra map[string]any) *entit
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"datasource_ingestion_data_source_get01", "datasource_ingestion_data_source_get02", "datasource_ingestion_data_source_get03", "2026_0901", "2026_0902", "2026_0903"},
+		[]any{"datasource_ingestion_data_source_get01", "datasource_ingestion_data_source_get02", "datasource_ingestion_data_source_get03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

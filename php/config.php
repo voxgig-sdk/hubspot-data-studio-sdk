@@ -193,13 +193,15 @@ class HubspotDataStudioConfig
           'fields' => [
             [
               'name' => 'config',
-              'req' => true,
+              'title' => 'Config',
               'type' => '`$OBJECT`',
+              'req' => true,
             ],
             [
               'name' => 'datasourceName',
-              'short' => 'Name of datasource',
+              'title' => 'Datasource Name',
               'type' => '`$STRING`',
+              'short' => 'Name of datasource',
             ],
           ],
           'name' => 'advanced',
@@ -209,7 +211,6 @@ class HubspotDataStudioConfig
               'name' => 'create',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/data-studio/data-source/2026-09/json',
@@ -227,17 +228,19 @@ class HubspotDataStudioConfig
                       'lit' => 'json',
                     ],
                   ],
-                  'select' => [],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'data-studio',
                     'data-source',
                     '2026-09',
                     'json',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
@@ -255,7 +258,6 @@ class HubspotDataStudioConfig
               'name' => 'create',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/data-studio/data-source/2026-09',
@@ -270,16 +272,18 @@ class HubspotDataStudioConfig
                       'lit' => '2026-09',
                     ],
                   ],
-                  'select' => [],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'data-studio',
                     'data-source',
                     '2026-09',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
@@ -288,26 +292,9 @@ class HubspotDataStudioConfig
               'name' => 'remove',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'example' => null,
-                        'kind' => 'param',
-                        'name' => 'datasource_id',
-                        'orig' => 'datasource_id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'DELETE',
                   'orig' => '/data-studio/data-source/2026-09/{datasourceId}',
-                  'rename' => [
-                    'param' => [
-                      'datasourceId' => 'datasource_id',
-                    ],
-                  ],
                   'segments' => [
                     [
                       'lit' => 'data-studio',
@@ -322,58 +309,75 @@ class HubspotDataStudioConfig
                       'var' => 'datasource_id',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'datasource_id',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'data-studio',
                     'data-source',
                     '2026-09',
                     '{datasource_id}',
                   ],
+                  'rename' => [
+                    'param' => [
+                      'datasourceId' => 'datasource_id',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'datasource_id',
+                        'orig' => 'datasource_id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                        'example' => null,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'datasource_id',
+                    ],
+                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                '2026_09',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
         'datasource_ingestion_data_push' => [
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
+              'type' => '`$ARRAY`',
               'req' => true,
               'short' => 'Data',
-              'type' => '`$ARRAY`',
             ],
             [
               'name' => 'datasourceId',
+              'title' => 'Datasource Id',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'Identifier of the datasource',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'datasourceName',
+              'title' => 'Datasource Name',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'Name of the datasource',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'previewLink',
+              'title' => 'Preview Link',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'Link to preview the datasource',
-              'type' => '`$STRING`',
             ],
           ],
           'name' => 'datasource_ingestion_data_push',
@@ -383,26 +387,9 @@ class HubspotDataStudioConfig
               'name' => 'create',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'example' => null,
-                        'kind' => 'param',
-                        'name' => 'datasource_id',
-                        'orig' => 'datasource_id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/data-studio/data-source/2026-09/{datasourceId}/data-push',
-                  'rename' => [
-                    'param' => [
-                      'datasourceId' => 'datasource_id',
-                    ],
-                  ],
                   'segments' => [
                     [
                       'lit' => 'data-studio',
@@ -420,15 +407,6 @@ class HubspotDataStudioConfig
                       'lit' => 'data-push',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'datasource_id',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'data-studio',
                     'data-source',
@@ -436,55 +414,83 @@ class HubspotDataStudioConfig
                     '{datasource_id}',
                     'data-push',
                   ],
+                  'rename' => [
+                    'param' => [
+                      'datasourceId' => 'datasource_id',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'datasource_id',
+                        'orig' => 'datasource_id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                        'example' => null,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'datasource_id',
+                    ],
+                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                '2026_09',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
         'datasource_ingestion_data_source_get' => [
           'fields' => [
             [
               'name' => 'columns',
+              'title' => 'Columns',
+              'type' => '`$ARRAY`',
               'req' => true,
               'short' => 'An array of FileColumn objects representing the columns in the data source.',
-              'type' => '`$ARRAY`',
             ],
             [
               'name' => 'createdAt',
+              'title' => 'Created At',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The creation date and time of the data source, represented as a string.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'datasourceId',
+              'title' => 'Datasource Id',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The unique identifier for the data source, represented as a 64-bit integer.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'datasourceName',
+              'title' => 'Datasource Name',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The name of the data source, represented as a string.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'datasourceType',
+              'title' => 'Datasource Type',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The type of the data source, which is a string with a valid value of \'FILE\'.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'lastIngestionStatus',
+              'title' => 'Last Ingestion Status',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The status of the last data ingestion process, represented as a string.',
-              'type' => '`$STRING`',
             ],
           ],
           'name' => 'datasource_ingestion_data_source_get',
@@ -494,26 +500,9 @@ class HubspotDataStudioConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'example' => null,
-                        'kind' => 'param',
-                        'name' => 'datasource_id',
-                        'orig' => 'datasource_id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/data-studio/data-source/2026-09/{datasourceId}',
-                  'rename' => [
-                    'param' => [
-                      'datasourceId' => 'datasource_id',
-                    ],
-                  ],
                   'segments' => [
                     [
                       'lit' => 'data-studio',
@@ -528,71 +517,90 @@ class HubspotDataStudioConfig
                       'var' => 'datasource_id',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'datasource_id',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'data-studio',
                     'data-source',
                     '2026-09',
                     '{datasource_id}',
                   ],
+                  'rename' => [
+                    'param' => [
+                      'datasourceId' => 'datasource_id',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'datasource_id',
+                        'orig' => 'datasource_id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                        'example' => null,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'datasource_id',
+                    ],
+                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                '2026_09',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
         'json' => [
           'fields' => [
             [
               'name' => 'config',
+              'title' => 'Config',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'createdAt',
-              'short' => 'Timestamp when the datasource was created.',
+              'title' => 'Created At',
               'type' => '`$STRING`',
+              'short' => 'Timestamp when the datasource was created.',
             ],
             [
               'name' => 'datasourceId',
+              'title' => 'Datasource Id',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The unique identifier for the data source.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'datasourceName',
+              'title' => 'Datasource Name',
+              'type' => '`$STRING`',
+              'req' => true,
               'op' => [
                 'update' => [
                   'type' => '`$STRING`',
                 ],
               ],
-              'req' => true,
               'short' => 'The name of the data source.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'previewLink',
+              'title' => 'Preview Link',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'A URL string that provides a preview link for the data source.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'updatedAt',
-              'short' => 'Timestamp when the datasource was updated.',
+              'title' => 'Updated At',
               'type' => '`$STRING`',
+              'short' => 'Timestamp when the datasource was updated.',
             ],
           ],
           'name' => 'json',
@@ -602,26 +610,9 @@ class HubspotDataStudioConfig
               'name' => 'update',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'example' => null,
-                        'kind' => 'param',
-                        'name' => 'datasource_id',
-                        'orig' => 'datasource_id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'PUT',
                   'orig' => '/data-studio/data-source/2026-09/{datasourceId}/json',
-                  'rename' => [
-                    'param' => [
-                      'datasourceId' => 'datasource_id',
-                    ],
-                  ],
                   'segments' => [
                     [
                       'lit' => 'data-studio',
@@ -639,15 +630,6 @@ class HubspotDataStudioConfig
                       'lit' => 'json',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'datasource_id',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'data-studio',
                     'data-source',
@@ -655,47 +637,74 @@ class HubspotDataStudioConfig
                     '{datasource_id}',
                     'json',
                   ],
+                  'rename' => [
+                    'param' => [
+                      'datasourceId' => 'datasource_id',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'datasource_id',
+                        'orig' => 'datasource_id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                        'example' => null,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'datasource_id',
+                    ],
+                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                '2026_09',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
         'n2026_09' => [
           'fields' => [
             [
               'name' => 'createdAt',
-              'short' => 'Timestamp when the datasource was created.',
+              'title' => 'Created At',
               'type' => '`$STRING`',
+              'short' => 'Timestamp when the datasource was created.',
             ],
             [
               'name' => 'datasourceId',
+              'title' => 'Datasource Id',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The unique identifier for the data source.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'datasourceName',
+              'title' => 'Datasource Name',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'The name of the data source.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'previewLink',
+              'title' => 'Preview Link',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'A URL string that provides a preview link for the data source.',
-              'type' => '`$STRING`',
             ],
             [
               'name' => 'updatedAt',
-              'short' => 'Timestamp when the datasource was updated.',
+              'title' => 'Updated At',
               'type' => '`$STRING`',
+              'short' => 'Timestamp when the datasource was updated.',
             ],
           ],
           'name' => 'n2026_09',
@@ -705,26 +714,9 @@ class HubspotDataStudioConfig
               'name' => 'patch',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'example' => null,
-                        'kind' => 'param',
-                        'name' => 'datasource_id',
-                        'orig' => 'datasource_id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'PATCH',
                   'orig' => '/data-studio/data-source/2026-09/{datasourceId}',
-                  'rename' => [
-                    'param' => [
-                      'datasourceId' => 'datasource_id',
-                    ],
-                  ],
                   'segments' => [
                     [
                       'lit' => 'data-studio',
@@ -739,20 +731,37 @@ class HubspotDataStudioConfig
                       'var' => 'datasource_id',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'datasource_id',
+                  'parts' => [
+                    'data-studio',
+                    'data-source',
+                    '2026-09',
+                    '{datasource_id}',
+                  ],
+                  'rename' => [
+                    'param' => [
+                      'datasourceId' => 'datasource_id',
                     ],
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'data-studio',
-                    'data-source',
-                    '2026-09',
-                    '{datasource_id}',
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'datasource_id',
+                        'orig' => 'datasource_id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                        'example' => null,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'datasource_id',
+                    ],
                   ],
                 ],
               ],
@@ -762,26 +771,9 @@ class HubspotDataStudioConfig
               'name' => 'update',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'example' => null,
-                        'kind' => 'param',
-                        'name' => 'datasource_id',
-                        'orig' => 'datasource_id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'PUT',
                   'orig' => '/data-studio/data-source/2026-09/{datasourceId}',
-                  'rename' => [
-                    'param' => [
-                      'datasourceId' => 'datasource_id',
-                    ],
-                  ],
                   'segments' => [
                     [
                       'lit' => 'data-studio',
@@ -796,31 +788,44 @@ class HubspotDataStudioConfig
                       'var' => 'datasource_id',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'datasource_id',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'data-studio',
                     'data-source',
                     '2026-09',
                     '{datasource_id}',
                   ],
+                  'rename' => [
+                    'param' => [
+                      'datasourceId' => 'datasource_id',
+                    ],
+                  ],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'datasource_id',
+                        'orig' => 'datasource_id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                        'example' => null,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'datasource_id',
+                    ],
+                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                '2026_09',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
       ],

@@ -80,7 +80,7 @@ function n2026_09_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "n2026_0901", "n2026_0902", "n2026_0903", "2026_0901", "2026_0902", "2026_0903" },
+    { "n2026_0901", "n2026_0902", "n2026_0903" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

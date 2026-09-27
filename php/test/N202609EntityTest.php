@@ -78,7 +78,7 @@ function n2026_09_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["n2026_0901", "n2026_0902", "n2026_0903", "2026_0901", "2026_0902", "2026_0903"] as $k) {
+    foreach (["n2026_0901", "n2026_0902", "n2026_0903"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

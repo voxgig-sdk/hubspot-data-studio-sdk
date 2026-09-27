@@ -1,0 +1,29 @@
+# BasicN202609Flow
+
+main: kit: flow: BasicN202609Flow:
+{
+  entity: "n2026_09",
+  kind: "basic",
+  name: "BasicN202609Flow",
+  step: [
+    {
+      i: {
+        ref: "n2026_09_ref01",
+        srcdatavar: "n2026_09_ref01_data",
+        suffix: "_up0",
+        textfield: "createdAt"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-n2026_09_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicN202609Flow"
+}

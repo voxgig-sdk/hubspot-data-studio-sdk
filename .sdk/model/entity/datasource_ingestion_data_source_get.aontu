@@ -1,0 +1,112 @@
+# Entity: datasource_ingestion_data_source_get
+
+main: kit: entity: datasource_ingestion_data_source_get: {
+
+  alias: field: {}
+
+  fields: {
+    columns: {
+      h: "Columns"
+      n: "columns"
+      r: true
+      sh: "An array of FileColumn objects representing the columns in the data source."
+      t: "`$ARRAY`"
+    }
+    createdAt: {
+      h: "Created At"
+      n: "createdAt"
+      r: true
+      sh: "The creation date and time of the data source, represented as a string."
+      t: "`$STRING`"
+    }
+    datasourceId: {
+      h: "Datasource Id"
+      n: "datasourceId"
+      r: true
+      sh: "The unique identifier for the data source, represented as a 64-bit integer."
+      t: "`$STRING`"
+    }
+    datasourceName: {
+      h: "Datasource Name"
+      n: "datasourceName"
+      r: true
+      sh: "The name of the data source, represented as a string."
+      t: "`$STRING`"
+    }
+    datasourceType: {
+      h: "Datasource Type"
+      n: "datasourceType"
+      r: true
+      sh: "The type of the data source, which is a string with a valid value of 'FILE'."
+      t: "`$STRING`"
+    }
+    lastIngestionStatus: {
+      h: "Last Ingestion Status"
+      n: "lastIngestionStatus"
+      r: true
+      sh: "The status of the last data ingestion process, represented as a string."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "datasource_ingestion_data_source_get"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /data-studio/data-source/2026-09/{datasourceId}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: null
+                k: "param"
+                n: "datasource_id"
+                or: "datasource_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/data-studio/data-source/2026-09/{datasourceId}"
+          q: {
+            exist: [
+              "datasource_id"
+            ]
+          }
+          r: {
+            param: {
+              datasourceId: "datasource_id"
+            }
+          }
+          s: [
+            {
+              lit: "data-studio"
+            }
+            {
+              lit: "data-source"
+            }
+            {
+              lit: "2026-09"
+            }
+            {
+              var: "datasource_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

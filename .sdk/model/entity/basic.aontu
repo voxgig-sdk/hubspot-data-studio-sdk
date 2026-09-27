@@ -1,0 +1,99 @@
+# Entity: basic
+
+main: kit: entity: basic: {
+
+  alias: field: {}
+
+  name: "basic"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /data-studio/data-source/2026-09"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/data-studio/data-source/2026-09"
+          s: [
+            {
+              lit: "data-studio"
+            }
+            {
+              lit: "data-source"
+            }
+            {
+              lit: "2026-09"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /data-studio/data-source/2026-09/{datasourceId}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: null
+                k: "param"
+                n: "datasource_id"
+                or: "datasource_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/data-studio/data-source/2026-09/{datasourceId}"
+          q: {
+            exist: [
+              "datasource_id"
+            ]
+          }
+          r: {
+            param: {
+              datasourceId: "datasource_id"
+            }
+          }
+          s: [
+            {
+              lit: "data-studio"
+            }
+            {
+              lit: "data-source"
+            }
+            {
+              lit: "2026-09"
+            }
+            {
+              var: "datasource_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

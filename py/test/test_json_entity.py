@@ -77,7 +77,7 @@ def _json_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["json01", "json02", "json03", "2026_0901", "2026_0902", "2026_0903"],
+        ["json01", "json02", "json03"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",

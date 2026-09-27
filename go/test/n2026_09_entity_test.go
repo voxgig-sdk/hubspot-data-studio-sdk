@@ -109,7 +109,7 @@ func n2026_09BasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"n2026_0901", "n2026_0902", "n2026_0903", "2026_0901", "2026_0902", "2026_0903"},
+		[]any{"n2026_0901", "n2026_0902", "n2026_0903"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

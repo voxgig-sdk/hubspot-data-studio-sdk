@@ -66,7 +66,7 @@ def _datasource_ingestion_data_push_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "2026_0901", "2026_0902", "2026_0903", "datasource01"],
+        ["datasource_ingestion_data_push01", "datasource_ingestion_data_push02", "datasource_ingestion_data_push03", "datasource01"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",

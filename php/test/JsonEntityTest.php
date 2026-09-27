@@ -78,7 +78,7 @@ function json_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["json01", "json02", "json03", "2026_0901", "2026_0902", "2026_0903"] as $k) {
+    foreach (["json01", "json02", "json03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

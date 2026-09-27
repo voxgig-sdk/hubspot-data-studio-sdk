@@ -1,0 +1,32 @@
+# BasicDatasourceIngestionDataSourceGetFlow
+
+main: kit: flow: BasicDatasourceIngestionDataSourceGetFlow:
+{
+  entity: "datasource_ingestion_data_source_get",
+  kind: "basic",
+  name: "BasicDatasourceIngestionDataSourceGetFlow",
+  step: [
+    {
+      i: {
+        ref: "datasource_ingestion_data_source_get_ref01",
+        srcdatavar: "datasource_ingestion_data_source_get_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "datasource_ingestion_data_source_get01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-datasource_ingestion_data_source_get_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDatasourceIngestionDataSourceGetFlow"
+}
